@@ -1,0 +1,36 @@
+{
+  "characters": [
+    {
+      "id": 1,
+      "name": "rick Sanchez",
+      "Status": "Alive",
+      "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+      "rating": 10,
+      "comment": "Universe Worst man but is he really?!?!?!"
+    },
+    {
+      "id": 2,
+      "name": "Morty Smith",
+      "Status": "Alive",
+      "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
+      "rating": 9,
+      "comment": "Morty hey Morty, want to take over the world? not really but OK!"
+    },
+    {
+      "id": 3,
+      "name": "Summer Smith",
+      "Status": "Alive",
+      "image": "https://rickandmortyapi.com/api/character/avatar/3.jpeg",
+      "rating": 5,
+      "comment": "Universe Worst man but is he really?!?!?!"
+    },
+    {
+      "id": 4,
+      "name": "NOOB NOOB",
+      "Status": "Alive but Dead",
+      "image": "https://static.wikia.nocookie.net/rickandmorty/images/c/c8/Noob_Noob.png/revision/latest?cb=20180614022930",
+      "rating": -2000,
+      "comment": "Noob-Noob appears to be ready to graduate to a full Vindicator, but is forced to remain behind after Rick gets drunk, passes out, and defecates all over the ship's holo-table"
+    }
+  ]
+}

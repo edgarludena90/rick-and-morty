@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Rick and Morty</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+  <script type="text/javascript" defer src="index.js"></script>
+</head>
+
+<body>
+  <header>
+    <h3>Your Sleez ball here</h3>
+  </header>
+
+  <!-- Rick and Morty characters-->
+  <div id="character-bar">
+    <!-- character Images Here -->
+  </div>
+
+  <!-- Rick Details -->
+  <div id="Ricks world">
+    <img class="detail-image" src="https://i.pinimg.com/736x/93/93/82/939382a22dc96f1d224614978b3c3e70.jpg" alt="Insert Name Here" />
+    <h2 class="name">Insert Name Here</h2>
+    <h3 class="species">Insert Species Here</h3>
+  </div>
+
+  <h3> Poopi Rating:</h3>
+  <p>
+    <span id='rating-display'>Insert rating here</span> / 10
+  </p>
+  <h3>Comment:</h3>
+  <p id='comment-display'>
+    Insert comment here
+  </p>
+
+  <!-- New Rick Form -->
+  <form id="new-ramen">
+    <h4>Add Your Rick or not your choice </h4>
+    <label for="name">Name: </label>
+    <input type="text" name="name" id="new-name" />
+
+
+    <label for="image">Image: </label>
+    <input type="text" name="image" id="new-image" />
+    <label for="rating">Rating: </label>
+    <input type="number" name="rating" id="new-rating" />
+    <label for="new-comment">Comment: </label>
+    <textarea name="new-comment" id="new-comment"></textarea>
+    <input type="submit" value="Create" />
+  </form>
+
+</body>
+
+</html>
