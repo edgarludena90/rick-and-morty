@@ -1,105 +1,109 @@
-// very first project LETS WORK!!!!
-//step chose an api make sure its
-// we have two event listeners left hoover and click
-
-fetch('http://localhost:3000/characters/')
-  .then(res => res.json())
-  .then(data => renderCharacters(data))
-
-// add click event
 
 const form = document.querySelector('#new-character')
-const imageUrl = document.querySelector('#new-image')
-const newName = document.querySelector('#new-name')
-const newComment = document.querySelector('#new-comment')
-// Added submit listner to add characters
-function handleSubmit(e) {
-  e.preventDefault()
-  const newChar = {
-    name: form['name'].value,
-    image: form['image'].value,
-    comment: form['new-comment'].value,
-    status: form['new-status'].value,
-    likes: parseInt(form['new-likes'].value),
+const charBar = document.querySelector('#character-bar')
+const detailImg = document.querySelector('.detail-image')
+const detailName = document.querySelector('.name')
+const status1 = document.querySelector('.status')
+const detailRating = document.querySelector('#rating-display')
+const detailComment = document.querySelector('#comment-display')
+
+const editForm = document.querySelector('#new-character')
+const editRating = document.querySelector('#new-rating')
+const editComment = document.querySelector('new-comment')
+
+let allCharacter = []
+let currentCharacter
+
+fetch('http://localhost:3000/characters')
+  .then(resp => resp.json())
+  .then(data => renderCharacter(data))
+
+const renderCharacter = characters => {
+  allCharacter = characters
+
+  if (characters.length < 1) {
+    charBar.innerHTML = ''
+
+    currentCharacter = undefined
+    detailImg.src = ''
+    detailName.textContent = ''
+    status1.textContent = ''
+    detailRating.textContent = ''
+    detailComment.textContent = ''
+    return
   }
-  renderCharacter(newChar)
-  postCharacter(newChar)
-}
-form.addEventListener('submit', handleSubmit)
 
-function postCharacter(characterObj) {
-  fetch('http://localhost:3000/characters/', {
-    method: 'POST',
-    headers: {
-      'Content-type': 'application/json',
-    },
-    body: JSON.stringify(characterObj),
-  })
-    .then(res => res.json())
-    .then(character => console.log(character))
-}
+  currentCharacter = characters[0]
+  detailImg.src = characters[0].image
+  detailName.textContent = characters[0].name
+  status1.textContent = characters[0].status
+  detailRating.textContent = characters[0].rating
+  detailComment.textContent = characters[0].comment
 
-// UPDATE character detail
-function updateCharacter(characterObj) {
-  fetch('http://localhost:3000/characters/', {
-    method: 'PATCH',
-    headers: {
-      'Content-type': 'application/json',
-    },
-    body: json.stringify(characterObj),
-  })
-    .then(res => res.json())
-    .then(character => console.log(character))
-}
-const charHtml = document.querySelector('#character-bar')
-
-function renderCharacter(character) {
-  // target id of character-bar
-
-  // create tags
-  const id = document.createElement('p')
-  const name = document.createElement('p')
-  const status = document.createElement('p')
-  const characterImage = document.createElement('img')
-  const likes = document.createElement('p')
-  const comment = document.createElement('p')
-
-  //   // target tag
-  name.textContent = character.name
-  status.textContent = character.status
-  characterImage.src = character.image
-  likes.textContent = character.likes
-
-  //  append each to the page
-  charHtml.append(characterImage)
-}
-
-function renderCharacters(characters) {
   characters.forEach(character => {
-    renderCharacter(character)
-    //const ricksWorld = document.querySelector('#Ricks-world')
+    const img = document.createElement('img')
+    img.src = character.image
 
-    // const detailImg = document.querySelector('.detail-image')
-    // const name = document.querySelector('.name')
-    // const status = document.querySelector('status')
-    // const likes = document.querySelector('likes')
+    charBar.append(img)
 
-    ricksWorld.addEventListener('click', () => {
-      const ricksWorld = document.querySelector('#Ricks-world')
-
-      const detailImg = document.querySelector('.detail-image')
-      const name = document.querySelector('.name')
-      const status = document.querySelector('status')
-      const likes = document.querySelector('likes')
-
+    img.addEventListener('click', () => {
+      currentCharacter = character
       detailImg.src = character.image
-      name.textContent = character.name
-      status.textContent = character.status
-      likes.textContent = character.likes
+      detailName.textContent = character.name
+      status1.textContent = character.status
+      detailRating.textContent = character.rating
+      detailComment.textContent = character.comment
     })
-    
   })
 }
+
+const addCharacter = () => {
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    const character = {
+      name: form['name'].value,
+      image: form['image'].value,
+      rating: form['rating'].value,
+      comment: form['new-comment'].value,
+    }
+
+    const img = document.createElement('img')
+
+    const detailImg = document.querySelector('.detail-image')
+    const detailName = document.querySelector('.name')
+    const detailRestaurant = document.querySelector('.restaurant')
+    const detailRating = document.querySelector('#rating-display')
+    const detailComment = document.querySelector('#comment-display')
+
+    img.src = character.image
+
+    charBar.append(img)
+
+    img.addEventListener('click', () => {
+      detailImg.src = character.image
+      detailName.textContent = character.name
+      status1.textContent = character.status
+      detailRating.textContent = character.rating
+      detailComment.textContent = character.comment
+    })
+  })
+}
+
+const updateCharacter = () => {
+  editForm.addEventListener('submit', e => {
+    e.preventDefault()
+    detailRating.textContent = e.target[0].value
+    detailComment.textContent = e.target[1].value
+  })
+}
+
+const createBtn = document.querySelector('#create-button')
+form.addEventListener('mouseover', event => {
+  event.target.style.color = 'blue'
+})
+
+addCharacter()
+updateCharacter()
 
 
 
