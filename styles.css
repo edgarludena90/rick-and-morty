@@ -34,11 +34,11 @@ header {
   cursor: pointer;
 }
 
-#ramen-menu img:last-child {
+#character-bar img:last-child {
   margin-right: 0;
 }
 
-#ramen-detail {
+#Ricks-world {
   position: relative;
 }
 
