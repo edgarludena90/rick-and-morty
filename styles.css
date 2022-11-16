@@ -20,14 +20,14 @@ header {
   color: white;
   background-color: black;
 }
-#rick-menu {
+#character-bar {
   display: flex;
   overflow-x: auto;
   margin: 2rem 0;
   max-width: calc(100vw - 2rem);
 }
 
-#rick-menu img {
+#character-bar img {
   flex: 0 1 auto;
   height: 150px;
   margin-right: 0.5rem;

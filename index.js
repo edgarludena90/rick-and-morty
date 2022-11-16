@@ -6,17 +6,13 @@ fetch('http://localhost:3000/characters/')
   .then(res => res.json())
   .then(data => renderCharacters(data))
 
-function renderCharacters(characters) {
-  characters.forEach(data => {
-    renderCharacter(data)
-  })
-}
+// add click event
 
 const form = document.querySelector('#new-character')
 const imageUrl = document.querySelector('#new-image')
 const newName = document.querySelector('#new-name')
 const newComment = document.querySelector('#new-comment')
-
+// Added submit listner to add characters
 function handleSubmit(e) {
   e.preventDefault()
   const newChar = {
@@ -55,10 +51,10 @@ function updateCharacter(characterObj) {
     .then(res => res.json())
     .then(character => console.log(character))
 }
+const charHtml = document.querySelector('#character-bar')
 
 function renderCharacter(character) {
   // target id of character-bar
-  const charHtml = document.querySelector('#character-bar')
 
   // create tags
   const id = document.createElement('p')
@@ -68,14 +64,42 @@ function renderCharacter(character) {
   const likes = document.createElement('p')
   const comment = document.createElement('p')
 
-  // target tag
+  //   // target tag
   name.textContent = character.name
   status.textContent = character.status
   characterImage.src = character.image
   likes.textContent = character.likes
 
-  // append each to the page
-  charHtml.append(name)
-  charHtml.append(status)
+  //  append each to the page
   charHtml.append(characterImage)
 }
+
+function renderCharacters(characters) {
+  characters.forEach(character => {
+    renderCharacter(character)
+    //const ricksWorld = document.querySelector('#Ricks-world')
+
+    // const detailImg = document.querySelector('.detail-image')
+    // const name = document.querySelector('.name')
+    // const status = document.querySelector('status')
+    // const likes = document.querySelector('likes')
+
+    ricksWorld.addEventListener('click', () => {
+      const ricksWorld = document.querySelector('#Ricks-world')
+
+      const detailImg = document.querySelector('.detail-image')
+      const name = document.querySelector('.name')
+      const status = document.querySelector('status')
+      const likes = document.querySelector('likes')
+
+      detailImg.src = character.image
+      name.textContent = character.name
+      status.textContent = character.status
+      likes.textContent = character.likes
+    })
+    
+  })
+}
+
+
+
