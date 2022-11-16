@@ -1,5 +1,4 @@
 // very first project LETS WORK!!!!
-//step chose an api make sure its
 // we have two event listeners left hoover and click
 
 fetch('http://localhost:3000/characters/')

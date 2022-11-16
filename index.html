@@ -5,12 +5,12 @@
   <meta charset="utf-8" />
   <title>Rick and Morty</title>
   <link rel="stylesheet" type="text/css" href="styles.css" />
-  <script type="text/javascript" defer src="index.js"></script>
+  <script type="text/javascript" defer src="redo.js"></script>
 </head>
 
 <body>
   <header>
-    <h3>Your Sleez ball here</h3>
+    <h3>Your Sleezeball Here</h3>
   </header>
 
   <!-- Rick and Morty characters-->
@@ -22,8 +22,10 @@
   <div id="Ricks-world">
     <img class="detail-image" src="https://i.pinimg.com/736x/93/93/82/939382a22dc96f1d224614978b3c3e70.jpg"
       alt="Insert Name Here" />
+    <h2 class="name">Insert Name Here</h2>
+    <h3 class="status">Insert Status Here</h3>
 
-    <h3 class="species">Insert Species Here</h3>
+
   </div>
 
   <h3> Poopi Rating:</h3>
@@ -44,17 +46,16 @@
     <label for="Status">status: </label>
     <input type="text" name="status" id="new-status" />
 
-    <label for="Likes">likes: </label>
-    <input type="number" name="likes" id="new-likes" />
-
 
     <label for="image">Image: </label>
     <input type="text" name="image" id="new-image" />
-    <!-- <label for="likes">likes: </label>
-    <input type="number" name="rating" id="new-rating" /> -->
+
+    <label for="rating">Rating: </label>
+    <input type="number" name="rating" id="new-rating" />
+
     <label for="new-comment">Comment: </label>
     <textarea name="new-comment" id="new-comment"></textarea>
-    <input type="submit" value="Create" />
+    <input type="submit" id="create-button" value="Create" />
   </form>
 
 </body>
