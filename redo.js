@@ -1,3 +1,4 @@
+
 const form = document.querySelector('#new-character')
 const charBar = document.querySelector('#character-bar')
 const detailImg = document.querySelector('.detail-image')
@@ -9,8 +10,6 @@ const detailComment = document.querySelector('#comment-display')
 const editForm = document.querySelector('#new-character')
 const editRating = document.querySelector('#new-rating')
 const editComment = document.querySelector('new-comment')
-
-const deleteBtn = document.querySelector('#delete')
 
 let allCharacter = []
 let currentCharacter
@@ -98,24 +97,13 @@ const updateCharacter = () => {
   })
 }
 
-const deleteCharacter = () => {
-  deleteBtn.addEventListener('click', () => {
-    const id = currentCharacter.id
-    const filteredArr = allCharacter.filter(character => character.id !== id)
-
-    charBar.innerHTML = ''
-    renderCharacter(filteredArr)
-  })
-}
-
-
-
-
-
+const createBtn = document.querySelector('#create-button')
+form.addEventListener('mouseover', event => {
+  event.target.style.color = 'blue'
+})
 
 addCharacter()
 updateCharacter()
-deleteCharacter()
 
 
 
