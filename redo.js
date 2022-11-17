@@ -1,3 +1,4 @@
+
 const form = document.querySelector('#new-character')
 const charBar = document.querySelector('#character-bar')
 const detailImg = document.querySelector('.detail-image')
@@ -11,6 +12,7 @@ const editRating = document.querySelector('#new-rating')
 const editComment = document.querySelector('new-comment')
 
 let allCharacter = []
+let currentCharacter
 
 fetch('http://localhost:3000/characters')
   .then(resp => resp.json())
@@ -22,6 +24,7 @@ const renderCharacter = characters => {
   if (characters.length < 1) {
     charBar.innerHTML = ''
 
+    currentCharacter = undefined
     detailImg.src = ''
     detailName.textContent = ''
     status1.textContent = ''
@@ -30,6 +33,7 @@ const renderCharacter = characters => {
     return
   }
 
+  currentCharacter = characters[0]
   detailImg.src = characters[0].image
   detailName.textContent = characters[0].name
   status1.textContent = characters[0].status
@@ -43,6 +47,7 @@ const renderCharacter = characters => {
     charBar.append(img)
 
     img.addEventListener('click', () => {
+      currentCharacter = character
       detailImg.src = character.image
       detailName.textContent = character.name
       status1.textContent = character.status
@@ -61,14 +66,6 @@ const addCharacter = () => {
       rating: form['rating'].value,
       comment: form['new-comment'].value,
     }
-    fetch('http://localhost:3000/characters', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(character),
-    })
 
     const img = document.createElement('img')
 
@@ -100,17 +97,10 @@ const updateCharacter = () => {
   })
 }
 
-const allInputs = document.querySelectorAll('.hover')
-allInputs.forEach(input => {
-  input.addEventListener('mouseover', () => {
-    input.style.color = 'blue'
-  })
-  input.addEventListener('mouseout', () => {
-    input.style.color = ''
-  })
+const createBtn = document.querySelector('#create-button')
+form.addEventListener('mouseover', event => {
+  event.target.style.color = 'blue'
 })
-
-console.log(allInputs)
 
 addCharacter()
 updateCharacter()
