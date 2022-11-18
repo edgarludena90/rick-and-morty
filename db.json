@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Rick Sanchez",
       "status": "Alive",
-      "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+      "image": "https://i1.sndcdn.com/avatars-000631834902-vd4fox-t500x500.jpg",
       "rating": 20,
       "comment": "Can somebody just let me out of here? If I die in a cage, I lose a bet."
     },
@@ -22,7 +22,7 @@
       "status": "Alive",
       "image": "https://rickandmortyapi.com/api/character/avatar/3.jpeg",
       "rating": 5,
-      "comment": "I'm a scientist, because I invent, transform, create, and destroy for a living, and when I don't like something about the world, I change it."
+      "comment": "At least the Devil has a Job!"
     },
     {
       "id": 4,

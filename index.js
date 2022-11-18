@@ -6,6 +6,7 @@ const status1 = document.querySelector('.status')
 const charRating = document.querySelector('#rating-display')
 const charComment = document.querySelector('#comment-display')
 const ricksWorld = document.querySelector("#ricks-world")
+
 fetch('http://localhost:3000/characters')
   .then(resp => resp.json())
   .then(data => renderCharacter(data))
@@ -62,7 +63,7 @@ const addCharacter = () => {
 const allInputs = document.querySelectorAll('.hover')
 allInputs.forEach(input => {
   input.addEventListener('mouseover', () => {
-    input.style.color = 'blue'
+    input.style.color = 'white'
   })
   input.addEventListener('mouseout', () => {
     input.style.color = ''

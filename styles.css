@@ -1,6 +1,6 @@
 * {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:'Courier New', Courier, monospace;
   box-sizing: border-box;
 }
 
@@ -30,7 +30,7 @@ header {
 #character-bar img {
   flex: 0 1 auto;
   height: 150px;
-  margin-right: 0.5rem;
+  margin-right: 0.9rem;
   cursor: pointer;
 }
 
@@ -54,6 +54,8 @@ header {
   bottom: 20px;
 }
 
+
+
 form {
   margin: 1rem 0;
   width: 300px;
@@ -73,9 +75,9 @@ textarea {
 }
 
 input[type='submit'] {
-  color: white;
+  color: rgb(0, 0, 0);
   border: 1px solid white;
-  background-color: black;
+  background-color: #fff874;
   cursor: pointer;
   transition: all 0.3s;
 }
@@ -88,6 +90,6 @@ form h4 {
   width: 100%;
   padding: 0.25rem;
   margin: 0.5rem 0;
-  color: white;
-  background-color: black;
+  color: rgb(0, 0, 0);
+  background-color: #fff874;
 }
